@@ -1,0 +1,6 @@
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# In case you ever have a data volume here, you'd ignore it
+# postgres_data/

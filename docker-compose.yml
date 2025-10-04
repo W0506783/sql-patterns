@@ -1,0 +1,31 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15 # Use a specific version of Postgres
+    container_name: sql_playground
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=practice
+    ports:
+      - "5432:5432" # Maps your computer's port 5432 to the container's port 5432
+    volumes:
+      - ./postgres-init:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:
+
+    # image: postgres:15: Tells Docker to download and use the official PostgreSQL version 15 image
+    # environment: Sets up the default username, password, and database name
+    # ports: Lets you connect to the database from your computer (e.g., from VS Code) as if it were running locally.
+    # volumes: The official Postgres image is programmed to automatically run 
+    #  any .sql files it finds in the /docker-entrypoint-initdb.d directory when it starts up for 
+    #  the first time. We are mapping our local postgres-init folder to that special directory inside the container.
+    #
+    #
+    #
+    #
+    #
+    #
