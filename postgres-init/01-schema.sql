@@ -1,9 +1,8 @@
 \c practice;
 
-CREATE TABLE tweets (
-    tweet_id INTEGER,
+CREATE TABLE "01_tweets" (
+    tweet_id SERIAL PRIMARY KEY,
     user_id INTEGER,
     msg VARCHAR(280),
     tweet_date TIMESTAMP
 );
-
